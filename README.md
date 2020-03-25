@@ -61,6 +61,14 @@ SleekSpacing(
 )
 ```
 
+### Updating global spacing
+
+Spacing values can be updated from wherever in the tree. This may be usefull to be responsive : adapting margins and gaps when `MediaQuery.size` changes for example.
+
+```dart
+SleekSpacing.update(context, SleekSpacingData(normal: 24));
+```
+
 ### Accessing spaces
 
 ```dart
