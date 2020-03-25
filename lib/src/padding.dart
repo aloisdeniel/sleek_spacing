@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:sleek_spacing/src/sides.dart';
 import 'package:sleek_spacing/src/space.dart';
 
 import 'insets.dart';
@@ -18,65 +19,65 @@ class SleekPadding extends StatelessWidget {
   factory SleekPadding.only(
     SleekSpace space, {
     Key key,
-    SleekSides border = SleekSides.all,
+    SleekSides sides = SleekSides.all,
   }) =>
       SleekPadding(
         key: key,
-        padding: SleekInsets.only(space, border),
+        padding: SleekInsets.only(space, sides),
       );
 
   factory SleekPadding.extraSmall({
     Key key,
-    SleekSides border = SleekSides.all,
+    SleekSides sides = SleekSides.all,
   }) =>
       SleekPadding(
         key: key,
-        padding: SleekInsets.only(SleekSpace.extraSmall, border),
+        padding: SleekInsets.only(SleekSpace.extraSmall, sides),
       );
 
   factory SleekPadding.small({
     Key key,
-    SleekSides border = SleekSides.all,
+    SleekSides sides = SleekSides.all,
   }) =>
       SleekPadding(
         key: key,
-        padding: SleekInsets.only(SleekSpace.small, border),
+        padding: SleekInsets.only(SleekSpace.small, sides),
       );
 
   factory SleekPadding.medium({
     Key key,
-    SleekSides border = SleekSides.all,
+    SleekSides sides = SleekSides.all,
   }) =>
       SleekPadding(
         key: key,
-        padding: SleekInsets.only(SleekSpace.medium, border),
+        padding: SleekInsets.only(SleekSpace.medium, sides),
       );
 
   factory SleekPadding.normal({
     Key key,
-    SleekSides border = SleekSides.all,
+    SleekSides sides = SleekSides.all,
   }) =>
       SleekPadding(
         key: key,
-        padding: SleekInsets.only(SleekSpace.normal, border),
+        padding: SleekInsets.only(SleekSpace.normal, sides),
       );
 
   factory SleekPadding.big({
     Key key,
-    SleekSides border = SleekSides.all,
+    SleekSides sides = SleekSides.all,
   }) =>
       SleekPadding(
         key: key,
-        padding: SleekInsets.only(SleekSpace.big, border),
+        padding: SleekInsets.only(SleekSpace.big, sides),
       );
 
   factory SleekPadding.extraBig({
     Key key,
-    SleekSides border = SleekSides.all,
+    SleekSides sides = SleekSides.all,
   }) =>
       SleekPadding(
         key: key,
-        padding: SleekInsets.only(SleekSpace.extraBig, border),
+        padding: SleekInsets.only(SleekSpace.extraBig, sides),
       );
 
   @override

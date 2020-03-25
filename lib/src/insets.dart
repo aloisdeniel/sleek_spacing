@@ -1,82 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:sleek_spacing/src/sides.dart';
 import 'package:sleek_spacing/src/spacing_data.dart';
 
 import 'space.dart';
 import 'spacing.dart';
-
-class SleekSides {
-  final bool hasTop;
-  final bool hasBottom;
-  final bool hasLeft;
-  final bool hasRight;
-
-  static const SleekSides all = SleekSides(
-    hasLeft: true,
-    hasRight: true,
-    hasTop: true,
-    hasBottom: true,
-  );
-  static const SleekSides top = SleekSides(
-    hasTop: true,
-  );
-  static const SleekSides bottom = SleekSides(
-    hasBottom: true,
-  );
-  static const SleekSides right = SleekSides(
-    hasRight: true,
-  );
-  static const SleekSides left = SleekSides(
-    hasLeft: true,
-  );
-  static const SleekSides vertical = SleekSides(
-    hasTop: true,
-    hasBottom: true,
-  );
-  static const SleekSides horizontal = SleekSides(
-    hasLeft: true,
-    hasRight: true,
-  );
-
-  SleekSides operator &(other) {
-    return this + other;
-  }
-
-  SleekSides operator +(other) {
-    if (other is SleekSides) {
-      return SleekSides(
-        hasBottom: this.hasBottom || other.hasBottom,
-        hasRight: this.hasRight || other.hasRight,
-        hasLeft: this.hasLeft || other.hasLeft,
-        hasTop: this.hasTop || other.hasTop,
-      );
-    }
-
-    return this;
-  }
-
-  SleekSides operator -(other) {
-    if (other is SleekSides) {
-      return SleekSides(
-        hasBottom: this.hasBottom && !other.hasBottom,
-        hasRight: this.hasRight && !other.hasRight,
-        hasLeft: this.hasLeft && !other.hasLeft,
-        hasTop: this.hasTop && !other.hasTop,
-      );
-    }
-
-    return this;
-  }
-
-  const SleekSides({
-    this.hasTop = false,
-    this.hasBottom = false,
-    this.hasLeft = false,
-    this.hasRight = false,
-  })  : assert(hasTop != null),
-        assert(hasBottom != null),
-        assert(hasLeft != null),
-        assert(hasRight != null);
-}
 
 class SleekInsets {
   final SleekSpace top;
@@ -120,42 +47,42 @@ class SleekInsets {
                 : (all != null ? all : SleekSpace.none));
 
   factory SleekInsets.only(SleekSpace space,
-          [SleekSides border = SleekSides.all]) =>
+          [SleekSides sides = SleekSides.all]) =>
       SleekInsets(
-        top: border.hasTop ? space : SleekSpace.none,
-        bottom: border.hasBottom ? space : SleekSpace.none,
-        right: border.hasRight ? space : SleekSpace.none,
-        left: border.hasLeft ? space : SleekSpace.none,
+        top: sides.hasTop ? space : SleekSpace.none,
+        bottom: sides.hasBottom ? space : SleekSpace.none,
+        right: sides.hasRight ? space : SleekSpace.none,
+        left: sides.hasLeft ? space : SleekSpace.none,
       );
 
-  factory SleekInsets.extraSmall([SleekSides border = SleekSides.all]) =>
-      SleekInsets.only(SleekSpace.extraSmall, border);
+  factory SleekInsets.extraSmall([SleekSides sides = SleekSides.all]) =>
+      SleekInsets.only(SleekSpace.extraSmall, sides);
 
-  factory SleekInsets.small([SleekSides border = SleekSides.all]) =>
-      SleekInsets.only(SleekSpace.small, border);
+  factory SleekInsets.small([SleekSides sides = SleekSides.all]) =>
+      SleekInsets.only(SleekSpace.small, sides);
 
-  factory SleekInsets.medium([SleekSides border = SleekSides.all]) =>
+  factory SleekInsets.medium([SleekSides sides = SleekSides.all]) =>
       SleekInsets.only(
         SleekSpace.medium,
-        border,
+        sides,
       );
 
-  factory SleekInsets.normal([SleekSides border = SleekSides.all]) =>
+  factory SleekInsets.normal([SleekSides sides = SleekSides.all]) =>
       SleekInsets.only(
         SleekSpace.normal,
-        border,
+        sides,
       );
 
-  factory SleekInsets.big([SleekSides border = SleekSides.all]) =>
+  factory SleekInsets.big([SleekSides sides = SleekSides.all]) =>
       SleekInsets.only(
         SleekSpace.big,
-        border,
+        sides,
       );
 
-  factory SleekInsets.extraBig([SleekSides border = SleekSides.all]) =>
+  factory SleekInsets.extraBig([SleekSides sides = SleekSides.all]) =>
       SleekInsets.only(
         SleekSpace.extraBig,
-        border,
+        sides,
       );
 
   EdgeInsets toEdgeInsets({BuildContext context, SleekSpacingData data}) {

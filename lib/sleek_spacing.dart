@@ -9,3 +9,4 @@ export 'src/space.dart';
 export 'src/spacing_data.dart';
 export 'src/spacing.dart';
 export 'src/wrap.dart';
+export 'src/sides.dart';

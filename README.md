@@ -96,14 +96,27 @@ SleekPadding(
 
 ```dart
 SleekPadding.small(
-  border: SleekSides.vertical + SleekSides.left, // All but bottom
   child: <child>
 )
 ```
 
 ```dart
 SleekPadding.small(
-  border: SleekSides.all - SleekSides.bottom, // All but bottom
+  sides: SleekSides.notRight, // All but right
+  child: <child>
+)
+```
+
+```dart
+SleekPadding.small(
+  sides: SleekSides.vertical + SleekSides.left, // All but right
+  child: <child>
+)
+```
+
+```dart
+SleekPadding.small(
+  sides: SleekSides.all - SleekSides.bottom, // All but bottom
   child: <child>
 )
 ```
