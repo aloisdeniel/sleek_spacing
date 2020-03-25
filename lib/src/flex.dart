@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
 import 'package:sleek_spacing/src/insets.dart';
 import 'package:sleek_spacing/src/padding.dart';
 import 'package:sleek_spacing/src/space.dart';
@@ -49,7 +50,7 @@ class SleekFlex extends StatelessWidget {
       mainAxisAlignment: mainAxisAlignment,
       textBaseline: textBaseline,
       children: spaceBetween != null && spaceBetween != SleekSpace.none
-          ? this.children.spaced(spaceBetween, axis: direction)
+          ? this.children.spaced(spaceBetween)
           : this.children,
     );
 
@@ -60,7 +61,10 @@ class SleekFlex extends StatelessWidget {
       );
     }
 
-    return result;
+    return Provider.value(
+      value: direction,
+      child: result,
+    );
   }
 }
 

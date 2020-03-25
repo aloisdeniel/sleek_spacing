@@ -23,27 +23,27 @@ class HomePage extends StatelessWidget {
                 ),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
-                  child: Row(
+                  child: SleekRow(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Bloc(32, 64),
-                      SleekHorizontalGap.extraSmall(),
+                      SleekGap.extraSmall(),
                       Bloc(32, 64),
-                      SleekHorizontalGap.small(),
+                      SleekGap.small(),
                       Bloc(32, 64),
-                      SleekHorizontalGap.normal(),
+                      SleekGap.normal(),
                       Bloc(32, 64),
-                      SleekHorizontalGap.medium(),
+                      SleekGap.medium(),
                       Bloc(32, 64),
-                      SleekHorizontalGap.big(),
+                      SleekGap.big(),
                       Bloc(32, 64),
-                      SleekHorizontalGap.extraBig(),
+                      SleekGap.extraBig(),
                       Bloc(32, 64),
                     ],
                   ),
                 ),
               ),
-              SleekVerticalGap.big(),
+              SleekGap.big(),
               SectionHeader('Padding'),
               Stack(
                 children: <Widget>[
@@ -67,7 +67,7 @@ class HomePage extends StatelessWidget {
                   )
                 ],
               ),
-              SleekVerticalGap.big(),
+              SleekGap.big(),
               SectionHeader('Column'),
               Stack(
                 children: <Widget>[
@@ -95,7 +95,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
-              SleekVerticalGap.big(),
+              SleekGap.big(),
               SectionHeader('Row'),
               Stack(
                 children: <Widget>[
@@ -124,7 +124,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
-              SleekVerticalGap.big(),
+              SleekGap.big(),
               SectionHeader('Wrap'),
               Stack(
                 children: <Widget>[

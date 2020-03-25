@@ -3,10 +3,7 @@ import 'gaps.dart';
 import 'space.dart';
 
 extension WidgetIterableExtension on Iterable<Widget> {
-  List<Widget> spaced(
-    SleekSpace space, {
-    Axis axis,
-  }) {
+  List<Widget> spaced(SleekSpace space) {
     if (this.isEmpty) {
       return const <Widget>[];
     }
@@ -14,13 +11,7 @@ extension WidgetIterableExtension on Iterable<Widget> {
       first,
       ...this.skip(1).expand((child) {
         return <Widget>[
-          SleekGap(
-            horizontal: axis == null || axis == Axis.horizontal
-                ? space
-                : SleekSpace.none,
-            vertical:
-                axis == null || axis == Axis.vertical ? space : SleekSpace.none,
-          ),
+          SleekGap(space),
           child,
         ];
       }),

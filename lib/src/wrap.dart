@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
 import 'package:sleek_spacing/src/space.dart';
 import 'package:sleek_spacing/src/spacing.dart';
 
@@ -52,6 +53,9 @@ class SleekWrap extends StatelessWidget {
       );
     }
 
-    return result;
+    return Provider.value(
+      value: direction,
+      child: result,
+    );
   }
 }

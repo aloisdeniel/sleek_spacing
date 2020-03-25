@@ -74,12 +74,48 @@ return SizedBox(width: spacing.small);
 
 <img height="82" src="https://github.com/aloisdeniel/sleek_spacing/raw/master/images/gaps.png">
 
+You can add an horizontal or vertical gap between other widgets.
+
 ```dart
-SleekVerticalGap.big();
+Column(
+  children: <Widget>[
+    Text('Hello'),
+    SleekGap.vertical(SleekSpace.small);
+    Text('World'),
+  ],
+),
 ```
 
 ```dart
-SleekHorizontalGap.medium();
+Row(
+  children: <Widget>[
+    Text('Hello'),
+    SleekGap.horizontal(SleekSpace.small);
+    Text('World'),
+  ],
+),
+```
+
+If your gap is in a `SleekColumn`, `SleekRow` or `SleekWrap`, it can deduce the current axis and makes its needed declaration more concise.
+
+```dart
+SleekColumn(
+  children: <Widget>[
+    Text('Hello'),
+    SleekGap.small();
+    Text('World'),
+  ],
+),
+```
+
+```dart
+SleekRow(
+  children: <Widget>[
+    Text('Hello'),
+    SleekGap.small();
+    Text('World'),
+  ],
+),
 ```
 
 #### Padding
