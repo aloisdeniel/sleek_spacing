@@ -28,9 +28,9 @@ dependencies:
     spaceBetween: SleekSpace.normal,
     children: <Widget>[
         Widget(),
-        SleekVerticalGap.small(),
+        SleekGap.small(),
         Widget(),
-        SleekVerticalGap.big(),
+        SleekGap.big(),
         Widget(),
     ],
 )
