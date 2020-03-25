@@ -1,0 +1,21 @@
+name: sleek_spacing
+description: Uniformize your margins, paddings and gaps.
+version: 0.1.0
+homepage: https://github.com/aloisdeniel/sleek_palette
+
+environment:
+  sdk: ">=2.6.0 <3.0.0"
+
+dependencies:
+  freezed_annotation: ^0.7.1
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  json_serializable: ^3.2.0
+  build_runner:
+  freezed: ^0.10.4
+  flutter_test:
+    sdk: flutter
+
+flutter:
