@@ -41,7 +41,7 @@ class SleekInsets {
                 ? horizontal
                 : (all != null ? all : SleekSpace.none)),
         this.right = right != null
-            ? bottom
+            ? right
             : (horizontal != null
                 ? horizontal
                 : (all != null ? all : SleekSpace.none));
